@@ -1,0 +1,381 @@
+:root {
+  --bg-light: #FFF8EF;
+  --accent-yellow: #F4C542;
+  --accent-orange: #D86E39;
+  --text-dark: #2E2E2E;
+  --hover-highlight: #A3D3CA;
+  --scroll-cue: #999;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.avatar {
+  width: 240px;
+  border-radius: 16px; /* optional: use if you want rounded corners */
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+  animation: floaty 5s ease-in-out infinite;
+}
+
+
+.text-block {
+  max-width: 500px;
+  text-align: left;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: var(--accent-orange);
+}
+
+p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--accent-yellow);
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--hover-highlight);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--hover-highlight);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+footer {
+  padding: 1.5rem;
+  text-align: center;
+  background-color: var(--accent-orange);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  color: var(--scroll-cue);
+  animation: bounce 2.5s infinite;
+  opacity: 0.7;
+}
+
+/* Animations */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.fade-in.delay {
+  animation-delay: 0.3s;
+}
+
+.fade-in.delay-more {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-header nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem 0;
+  flex-wrap: wrap;
+}
+
+nav a.active {
+  color: var(--accent-orange);
+  font-weight: 600;
+}
+
+.about {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.about h1 {
+  font-size: 2.5rem;
+  color: var(--accent-orange);
+  margin-bottom: 1rem;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  opacity: 0.85;
+  flex-wrap: wrap;
+}
+
+.icon-float {
+  font-size: 2rem;
+  color: var(--accent-orange);
+  animation: float-icon 5s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.icon-float:hover {
+  transform: scale(1.2) rotate(4deg);
+}
+
+@keyframes float-icon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+
+.svg-bg-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -999;
+  opacity: 0.2; /* adjust to taste */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.svg-bg {
+  width: 200%;
+  height: auto;
+  animation: waveSlide 20s ease-in-out infinite;
+  transform: translateY(60px); /* adjust as needed */
+}
+
+
+@keyframes waveSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
+.resume-wrapper {
+  position: relative;
+  padding: 6rem 2rem;
+  background-color: #fdf6e3; /* or whatever your light cream color is */
+  overflow: hidden;
+}
+
+.resume-wrapper::before {
+  content: '\f15c'; /* Font Awesome file icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 100rem;
+  color: rgba(0, 0, 0, 0.05);
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.resume-paper {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+
+.art-section {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.art-section h1 {
+  font-size: 2.5rem;
+  color: var(--accent-orange);
+  margin-bottom: 0.5rem;
+}
+
+.art-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slide img {
+  width: 80%;
+  max-width: 500px;
+  border: 10px solid white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+  border-radius: 6px;
+}
+
+.carousel-slide:nth-child(even) img {
+  transform: rotate(2deg);
+}
+
+.carousel-slide img:hover {
+  transform: scale(1.03) rotate(0deg);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  font-size: 2rem;
+  color: var(--accent-orange);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  z-index: 2;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+
+.projects {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projects-intro {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.project-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+}
+
+.project-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.project-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-orange);
+}
+
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
