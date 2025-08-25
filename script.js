@@ -1,43 +1,65 @@
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const fadeIns = document.querySelectorAll('.fade-in');
-
-  fadeIns.forEach((el) => {
-    el.style.willChange = 'opacity, transform';
-  });
-
-  
-});
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".carousel-track");
   const slides = Array.from(track.children);
   const nextButton = document.querySelector(".carousel-btn.right");
   const prevButton = document.querySelector(".carousel-btn.left");
 
-  let currentIndex = 0;
+  // Clone first & last slides for smooth looping
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone = slides[slides.length - 1].cloneNode(true);
 
-  function updateCarousel() {
-    const slideWidth = slides[0].getBoundingClientRect().width;
+  firstClone.id = "first-clone";
+  lastClone.id = "last-clone";
+
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, slides[0]);
+
+  const updatedSlides = Array.from(track.children);
+  let currentIndex = 1; // start on the first "real" slide
+  const slideWidth = slides[0].getBoundingClientRect().width;
+
+  track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+
+  function setTransition(enable) {
+    track.style.transition = enable ? "transform 0.4s ease-in-out" : "none";
+  }
+
+  function moveToSlide() {
     track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
   }
 
   nextButton.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateCarousel();
+    if (currentIndex >= updatedSlides.length - 1) return;
+    currentIndex++;
+    setTransition(true);
+    moveToSlide();
   });
 
   prevButton.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateCarousel();
+    if (currentIndex <= 0) return;
+    currentIndex--;
+    setTransition(true);
+    moveToSlide();
   });
 
-  // Set slide positions for smoother transitions
-  slides.forEach((slide, index) => {
-    slide.style.left = `${index * 100}%`;
+  track.addEventListener("transitionend", () => {
+    if (updatedSlides[currentIndex].id === "first-clone") {
+      setTransition(false);
+      currentIndex = 1;
+      moveToSlide();
+    }
+
+    if (updatedSlides[currentIndex].id === "last-clone") {
+      setTransition(false);
+      currentIndex = updatedSlides.length - 2;
+      moveToSlide();
+    }
   });
 
-  track.style.transition = "transform 0.4s ease-in-out";
+  // Adjust carousel if window resizes
+  window.addEventListener("resize", () => {
+    const newWidth = slides[0].getBoundingClientRect().width;
+    track.style.transition = "none";
+    track.style.transform = `translateX(-${newWidth * currentIndex}px)`;
+  });
 });

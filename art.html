@@ -4,10 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Art – Anna's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
+
+  <div class="svg-bg-wrapper">
+  <svg class="svg-bg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#f4c542" d="M0,192L60,186.7C120,181,240,171,360,149.3C480,128,600,96,720,112C840,128,960,192,1080,197.3C1200,203,1320,149,1380,122.7L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+  </svg>
+</div>
 
 
   <header class="page-header">
@@ -18,8 +25,36 @@
       <a href="art.html" class="active">Art</a>
       <a href="resume.html">Resume</a>
     </nav>
+    
   </header>
 
+  
+<div class="icon-row">
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/reahannagcooper" target="_blank" rel="noopener noreferrer">
+    <i class="fas fa-laptop-medical icon-float" title="LinkedIn"></i>
+  </a>
+
+  <!-- GitHub -->
+  <a href="https://github.com/cooperchan" target="_blank" rel="noopener noreferrer">
+    <i class="fas fa-brain icon-float" title="GitHub"></i>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/sunlitdoordesigns" target="_blank" rel="noopener noreferrer">
+    <i class="fas fa-pencil icon-float" title="Instagram"></i>
+  </a>
+
+  <!-- Etsy -->
+  <a href="https://www.etsy.com/shop/sunlitdoordesigns" target="_blank" rel="noopener noreferrer">
+    <i class="fas fa-hands-holding icon-float" title="Etsy Shop"></i>
+  </a>
+
+  <!-- Resume Download -->
+  <a href="assets/rcooper-resume.pdf" download>
+    <i class="fas fa-seedling icon-float" title="Download Resume"></i>
+  </a>
+</div>
 
   <section class="art-section">
     <h1>Art</h1>
@@ -31,15 +66,30 @@
       <div class="carousel-track">
         <div class="carousel-slide">
           <img src="assets/images/artexample1.png" alt="Art 1" />
+          <br>
+            <p class="art-description">
+    "Skyshift." Originally animated for Instagram: this is a still of the night frame in a day-to-night cycle.
+  </p>
         </div>
         <div class="carousel-slide">
           <img src="assets/images/artexample2.PNG" alt="Art 2" />
+          <br>
+            <p class="art-description">
+   "Soothe." Originally animated for Instagram: an essential oil diffuser representing the DBT Distress Tolerance skill Self-Soothe, which focuses on calming the body and mind through the senses.
         </div>
         <div class="carousel-slide">
-          <img src="assets/images/artexample4.JPG" style="max-height: 500px; width: auto;" alt="Art 2" />
+          <img src="assets/images/artexample4.JPG" style="max-height: 500px; width: auto;" alt="Art 4" />
+          <br>
+            <p class="art-description">
+    "To Now." Half of a full piece accepted into SAMHSA’s 2024 Art of Recovery Virtual Gallery. This section represents growth, creativity, and the healing process, capturing how art became a pathway toward hope and self-expression.
+  </p>
         </div>
         <div class="carousel-slide">
-          <img src="assets/images/artexample5.png" alt="Art 3" />
+          <img src="assets/images/artexample5.png" alt="Art 5" />
+          <br>
+            <p class="art-description">
+    "The Door's Open." The inspiration behind Sunlit Door Designs. This piece represents new beginnings and stepping into spaces of light, connection, and possibility.
+  </p>
         </div>
         <!-- Add more slides here -->
       </div>
