@@ -510,6 +510,29 @@ nav a.active {
   border-radius: 12px;
 }
 
+/* Keyboard image */
+.workspace {
+  max-width: 1100px;
+  margin: 0 auto 6rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.workspace img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(33, 14, 99, 0.12);
+}
+
+.workspace-caption {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--accent-primary);
+  opacity: 0.7;
+}
+
 /* Subtle twinkling background */
 body::before,
 body::after {
