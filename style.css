@@ -22,9 +22,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 58vh;
+  min-height: 52vh;
   height: auto;
-  padding: 2.5rem 2rem 1rem;
+  padding: 2rem 2rem 0.5rem;
   position: relative;
 }
 
@@ -514,7 +514,7 @@ nav a.active {
 /* Keyboard image */
 .workspace {
   max-width: 560px;
-  margin: 0 20% 2.5rem auto;
+  margin: 0 12% 1rem auto;
   padding: 0 2rem;
   text-align: center;
 }
