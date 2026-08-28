@@ -509,3 +509,53 @@ nav a.active {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   border-radius: 12px;
 }
+
+/* Subtle twinkling background */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 8% 18%, rgba(33, 14, 99, 0.22) 0 1px, transparent 2px),
+    radial-gradient(circle at 22% 72%, rgba(228, 190, 59, 0.35) 0 1px, transparent 2px),
+    radial-gradient(circle at 39% 26%, rgba(110, 139, 172, 0.30) 0 1px, transparent 2px),
+    radial-gradient(circle at 54% 81%, rgba(33, 14, 99, 0.18) 0 1px, transparent 2px),
+    radial-gradient(circle at 68% 14%, rgba(228, 190, 59, 0.30) 0 1px, transparent 2px),
+    radial-gradient(circle at 82% 62%, rgba(110, 139, 172, 0.28) 0 1px, transparent 2px),
+    radial-gradient(circle at 94% 31%, rgba(33, 14, 99, 0.18) 0 1px, transparent 2px);
+
+  animation: twinkle-one 5s ease-in-out infinite alternate;
+}
+
+body::after {
+  background:
+    radial-gradient(circle at 15% 48%, rgba(228, 190, 59, 0.28) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 31% 10%, rgba(110, 139, 172, 0.25) 0 1px, transparent 2px),
+    radial-gradient(circle at 47% 59%, rgba(33, 14, 99, 0.16) 0 1px, transparent 2px),
+    radial-gradient(circle at 63% 38%, rgba(228, 190, 59, 0.30) 0 1px, transparent 2px),
+    radial-gradient(circle at 76% 88%, rgba(110, 139, 172, 0.25) 0 1px, transparent 2px),
+    radial-gradient(circle at 89% 7%, rgba(33, 14, 99, 0.18) 0 1.5px, transparent 2.5px);
+
+  animation: twinkle-two 7s ease-in-out infinite alternate;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes twinkle-one {
+  from { opacity: 0.25; }
+  to   { opacity: 0.8; }
+}
+
+@keyframes twinkle-two {
+  from { opacity: 0.65; }
+  to   { opacity: 0.15; }
+}
