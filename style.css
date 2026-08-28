@@ -22,8 +22,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  padding: 2rem;
+  min-height: 65vh;
+  height: auto;
+  padding: 3rem 2rem 2rem;
   position: relative;
 }
 
@@ -512,8 +513,8 @@ nav a.active {
 
 /* Keyboard image */
 .workspace {
-  max-width: 1100px;
-  margin: 0 auto 6rem;
+  max-width: 900px;
+  margin: 1rem auto 5rem;
   padding: 0 2rem;
   text-align: center;
 }
