@@ -382,6 +382,9 @@ nav a.active {
   .project-grid {
     grid-template-columns: 1fr;
   }
+  .workspace {
+  top: 0;
+}
 }
 
 .contact-section {
