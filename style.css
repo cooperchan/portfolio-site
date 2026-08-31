@@ -44,7 +44,7 @@ body {
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
   animation: floaty 5s ease-in-out infinite;
   position: relative;
-  top: 35px;
+  top: 45px;
 }
 
 .text-block {
@@ -77,6 +77,7 @@ nav a {
   font-weight: 600;
   position: relative;
   transition: color 0.3s ease;
+  font-size: 1.2rem;
 }
 
 nav a::after {
