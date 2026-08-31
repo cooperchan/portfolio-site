@@ -100,7 +100,7 @@ nav a:hover::after {
 }
 
 footer {
-  padding: 1.8rem;
+  padding: 1.9rem;
   text-align: center;
   background-color: var(--accent-primary);
   color: white;
@@ -520,6 +520,8 @@ nav a.active {
   margin: 0 12% 1rem auto;
   padding: 0 2rem;
   text-align: center;
+  position: relative;
+  top: -25px;
 }
 
 .workspace img {
