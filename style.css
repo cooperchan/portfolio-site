@@ -100,7 +100,7 @@ nav a:hover::after {
 }
 
 footer {
-  padding: 1.5rem;
+  padding: 1.8rem;
   text-align: center;
   background-color: var(--accent-primary);
   color: white;
