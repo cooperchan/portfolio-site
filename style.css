@@ -382,9 +382,6 @@ nav a.active {
   .project-grid {
     grid-template-columns: 1fr;
   }
-  .workspace {
-  top: 0;
-}
 }
 
 .contact-section {
@@ -540,6 +537,12 @@ nav a.active {
   font-style: italic;
   color: var(--accent-primary);
   opacity: 0.7;
+}
+
+@media (max-width: 700px) {
+  .workspace {
+    top: 0;
+  }
 }
 
 /* Subtle twinkling stars */
